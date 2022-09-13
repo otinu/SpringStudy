@@ -39,3 +39,6 @@ public class SpringDataJdbcSampleApplication {
 	}
 
 }
+
+
+// ⚠️\src\main\resources\application.properties にデータベース接続情報も記述すること
