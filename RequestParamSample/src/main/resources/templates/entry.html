@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- タイムリーフの使用宣言 -->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>入力画面</title>
+</head>
+<body>
+	<form th:action="@{/confirm}" method="post">
+		<div>
+			<label for="name">名前：</label>
+			<input type="text" name="name">
+			<!-- ↑name属性を「name」としたら、コントローラ(受け取り)側の変数名もnameにするべき
+				　model.addAttribute("name", name) にするべき -->
+		</div>
+		<div>
+			<label for="age">年齢：</label>
+			<!-- 「type="number"」で数値入力欄が表示される -->
+			<input type="number" name="age" min="1" max="100">歳
+		</div>
+		<div>
+			<label for="birth">生年月日：</label>
+			<!-- 「type="date"」で日付入力欄が表示される
+				　⚠️バックエンドで受け取る際、値は「yyyy-MM-dd」の書式になる点に要注意 -->
+			<input type="date" name="birth">
+		</div>
+		<input type="submit" value="送信">
+	</form>
+</body>
+</html>
