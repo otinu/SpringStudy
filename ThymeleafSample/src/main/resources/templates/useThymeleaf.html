@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--01：直接文字を埋め込む-->
+	<h1 th:text="'helloworld'">表示する部分</h1>
+
+	<!--02：インライン処理-->
+	<h1>こんにちは！[[${name}]]さん</h1>
+
+	<!--03：値結合-->
+	<h1 th:text="'明日は、'+'晴れ'+'です。'">表示する部分</h1>
+
+	<!-- 04 : 値結合(リテラル置換) -->
+	<h1 th:text="|こんにちわ！ ${name}さん|">表示する部分</h1>
+	
+	<!-- 05: ローカル変数 -->
+	<div th:with="a=1,b=2">
+		<span th:text="|${a} + ${b} = ${a+b}|"></span>
+	</div>
+	
+	<!-- 06 : 比較と等価 -->
+	<span th:text="1 > 10"></span>
+	<span th:text="1 < 10"></span>
+	<span th:text="1 >= 10"></span>
+	<span th:text="1 <= 10"></span>
+	<span th:text="1 == 10"></span>
+	<span th:text="1 != 10"></span>
+	<span th:text="otinu == otinu"></span>
+	<span th:text="otinu != otinu"></span>
+	
+	<!-- 07 : 条件演算子 -->
+	<p th:text="${name}=='太郎'?'太郎さんです！':'太郎さんではありません。'"></p>
+	
+	<!-- 08 : 条件分岐(true) -->
+	<div th:if="${name}=='太郎'">
+		<p>太郎さんです！</p>
+	</div>
+	
+	<!-- 09 : 条件分岐(false) -->
+	<div th:unless="${name}=='花子'">
+		<p>花子さんではありません</p>
+	</div>
+	
+	<!-- 10 : divタグを増やさずに分岐処理を表示 -->
+	<th:block th:if="${name}=='otinu'">
+		<p>otinuです！</p>
+	</th:block>
+	
+	<!-- 11: shitch文 -->
+	
+	<div th:switch="${name}">
+		<p th:case="太郎" th:text="|${name}です！|"></p>
+		<p th:case="花子" th:text="|${name}です！|"></p>
+		<p th:case="otinu" th:text="|${name}です！|"></p>
+		<p th:case="*">メンバーリストには未記載の名前です</p>
+	</div>
+	
+	<!-- 12 : 参照(データをまとめたオブジェクト) -->
+		.でアクセス :<span th:text="${mb.id}">ID</span>-<span th:text="${mb.name}">名前</span><br>
+		[]でアクセス:<span th:text="${mb['id']}">ID</span>-<span th:text="${mb['name']}">名前</span><br>
+	<!-- 13 : 参照(th:object) -->
+	<th:block th:object="${mb}">
+		.でアクセス :<span th:text="*{id}">ID</span>-<span th:text="*{name}">名前</span><br>
+		[]でアクセス:<span th:text="*{['id']}">ID</span>-<span th:text="*{['name']}">名前</span><br><br>
+	</th:block>
+	
+	<!-- 14 : 参照(List) -->
+	<span th:text="${list[0]}">West</span>
+	<span th:text="${list[1]}">East</span>
+	<span th:text="${list[2]}">South</span>
+	<span th:text="${list[3]}">North</span><br><br>
+	
+	<!-- 15 : 参照(Map) -->
+	.でアクセス :<span th:text="${map.mejina.name}">名前1</span>
+	<span th:text="${map.kiss.name}">名前2</span><br>
+	[]でアクセス :<span th:text="${map['mejina']['name']}">名前1 : []でアクセス</span>
+	<span th:text="${map['kiss']['name']}">名前2: []でアクセス</span>
+	
+	<!-- 15 : 繰り返し -->
+	<div th:each="member:${members}">
+		<p>[[${member.id}]]: [[${member.name}]]</p>
+	</div>
+	
+	<!-- 18 : フラグメントを埋め込む -->
+	<br>
+	<h1>Fragmentを埋め込む</h1>
+	<div id="one" th:insert="fragment::one"></div>
+	<div id="three" th:replace="fragment::three">ここは置き換えられて、非表示</div>
+	
+	
+	
+</body>
+</html>
