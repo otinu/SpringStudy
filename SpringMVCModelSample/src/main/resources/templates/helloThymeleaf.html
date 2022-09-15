@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 th:text="${greet_thymeleaf}">表示される部分</h1>
+	
+	<!-- タイムリーフで直接文字列を表示させたいときは、「ダブルクオートの中にシングルクオートで囲って」記述する -->
+	<h3 th:text="'ダイレクトメッセージ'">表示される部分</h3>
+	
+	<!-- 出力の一部として埋め込む場合 -->>
+	<h3>こんにちわ！ [[${second_message}]]！</h3>
+</body>
+</html>
