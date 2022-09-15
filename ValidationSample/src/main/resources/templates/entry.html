@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<title th:text="#{title.entry}">タイトル</title>
+</head>
+<body>
+<form th:action="@{/calc}" method="post" th:object="${calcForm}">
+	<div>
+	
+	<!--  エラー表示 -->
+	<ul th:if="${#fields.hasErrors('*')}">
+		<li th:each="err:${#fields.errors('*')}" th:text="${err}"></li>
+	</ul>
+	
+	<input type="text" th:field="*{leftNum}">
+	+
+	<input type="text" th:field="*{rightNum}">
+	</div>
+	
+	<button type="submit" th:text="#{button.send}"></button>
+	<input type="submit" value="計算">
+</form>
+
+</body>
+</html>

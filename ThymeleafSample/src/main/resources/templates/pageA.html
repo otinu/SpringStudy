@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http;//www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{commons/layout}">
+<!-- ⚠️Thymeleafバージョン3では「decorate」を使用すること -->
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--
+表示されるのは「pageA.html」のはずだけど、
+今回のケースでは「layout:fragment="content"」以外の部分が共通テンプレートに置き換わっている
+　⇒実質、2/3がlayout.htmlの内容で表示される。
+ -->
+	<div layout:fragment="content">
+		<h1>PageA</h1>
+	</div>
+</body>
+</html>
