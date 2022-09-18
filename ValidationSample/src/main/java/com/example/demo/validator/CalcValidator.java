@@ -6,6 +6,8 @@ import org.springframework.validation.Validator;
 
 import com.example.demo.form.CalcForm;
 
+// ここでのDIでは、Validatorインタフェースを継承している
+// ⇒前回はCrudRepositoryだった
 @Component
 public class CalcValidator implements Validator {
 

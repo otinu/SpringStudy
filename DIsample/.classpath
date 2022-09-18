@@ -1,8 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="src" path="src/main/java"/>
 	<classpathentry kind="src" path="src/test/java"/>
-	<classpathentry kind="lib" path="gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/fitsh/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.3.22/fdd59bb4795c7a399e95ec4a5c8b91103e3189fd/spring-context-5.3.22.jar" sourcepath="C:/Users/fitsh/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.3.22/f4db315532d6ac425ca16e7c80119c6837ae325d/spring-context-5.3.22-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/fitsh/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.3.22/866c2022b5fef05b1702f4a07cfa5598660ce08a/spring-beans-5.3.22.jar" sourcepath="C:/Users/fitsh/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.3.22/65b5d0395370c92d76c4153101171b4edd7df49d/spring-beans-5.3.22-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/fitsh/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.7.3/4c96169e8d71c9c41f07a40d011dbd41898180ac/spring-boot-autoconfigure-2.7.3.jar" sourcepath="C:/Users/fitsh/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-autoconfigure/2.7.3/8433951e5af85fee6c6c3b2d7f486446bdafda21/spring-boot-autoconfigure-2.7.3-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="C:/Users/fitsh/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.7.3/3a8d641077565b7eaec3b2f91d5b83a6800f5895/spring-boot-2.7.3.jar" sourcepath="C:/Users/fitsh/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot/2.7.3/a5fd253003eeb65620223ac0ad5f30157773d622/spring-boot-2.7.3-sources.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

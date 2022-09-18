@@ -1,3 +1,8 @@
+// Repository ⇒ インフラストラクチャ層
+// Repositoryは「データベースへのデータ操作」を行うクラス
+
+// このファイルが RepositoryImpl の役割
+
 package com.example.quiz.repository;
 
 import org.springframework.data.jdbc.repository.query.Query;

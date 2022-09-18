@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 // 引数にvalueとmethodを指定する。
 // methodは省略可能。デフォルトはGetリクエストになる
+// valueでURLを決める。「hello」とすれば、URLは「http://…/hello」となる
 @RequestMapping("hello")
 public class HelloViewController {
 

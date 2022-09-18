@@ -13,6 +13,9 @@ public class ListExercise {
 		for(String local_name : prefecture) {
 			System.out.println(local_name);
 		}
+		
+		// ジェネリクスのおかげで、String型以外の値の追加は制限される
+		// prefecture.add(2);
 	}
 
 }

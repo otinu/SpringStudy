@@ -1,3 +1,5 @@
+// Controller ⇒ アプリケーション層
+
 package com.example.quiz.controller;
 
 import java.util.Optional;
@@ -155,28 +157,5 @@ public class QuizController {
 		
 		return "answer";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

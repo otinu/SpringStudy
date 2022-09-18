@@ -19,6 +19,7 @@
 	<input type="text" th:field="*{rightNum}">
 	</div>
 	
+	<!-- #{}とすることで、Thymeleafではmessages.propertiesの値を使うことができる -->
 	<button type="submit" th:text="#{button.send}"></button>
 	<input type="submit" value="計算">
 </form>

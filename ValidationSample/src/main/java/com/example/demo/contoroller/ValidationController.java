@@ -21,20 +21,24 @@ public class ValidationController {
 	CalcValidator calcValidator;
 	
 	// 相関チェックの登録
-	// @InitBinderにはチェック対象Formクラスのモデルでの識別名(キャメルケース)
+	// @InitBinderにはチェック対象Formクラスのモデルでの識別名(ロワーキャメルケース)
 	@InitBinder("calcForm")
 	public void initBinder(WebDataBinder webDataBinder) {
+		
+		// これで、Viewファイル側で「th:object="${〇〇}"」の形式でFormクラスが使えるようになる
+		// ⇒entry.html で使用
 		webDataBinder.addValidators(calcValidator);
 	}
 	
-	// HTMLのformタグにバインドする「Formクラス」インスタンスの初期化
-	// ⇒「form-backing bean」 という
-	@ModelAttribute // form-backing beanは@ModelAttribute で初期化を行う
+	// バリデーションを使うには、@ModelAttribute の設置が必要
+	@ModelAttribute
 	public CalcForm setUpForm() {
 		/*
-		@ModelAttributeがついたこのメソッドは、リクエストハンドラメソッド(ここではshowView())
-		が呼び出される前に「リクエストスコープ」でModelに格納される。
+		 * @ModelAttributeがついたこのメソッドは、リクエストハンドラメソッドが呼び出される前に実行され、
+		 * リクエストスコープでModelに自動的に設定される
 		*/
+		
+		// 戻り値の型がバリデーションの対象クラス(form-backing beanという)になる
 		return new CalcForm();
 	}
 	
@@ -45,8 +49,10 @@ public class ValidationController {
 	
 	@PostMapping("calc")
 	
-	// @Validatedで「バリデーションを実行する」サインになり、実行結果はBindingResultに保持される。
-	// この二つはバリデーションをする際に必ず渡す必要があり、順番も「@Validated ⇒ BindingResult」になる
+	/*
+	 * @Validatedで「バリデーションを実行する」サインになり、実行結果はBindingResultに保持される。
+	 * この二つはバリデーションをする際に必ず渡す必要があり、順番も「@Validated ⇒ BindingResult」になる
+	 */
 	public String confirmView(@Validated CalcForm form,
 			BindingResult bindingResult, Model model) {
 		

@@ -1,3 +1,5 @@
+// Service ⇒ ドメイン層
+
 package com.example.quiz.service;
 
 import java.util.Optional;
